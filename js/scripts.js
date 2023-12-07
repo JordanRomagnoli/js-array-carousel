@@ -1,10 +1,11 @@
-// associamo una variabile ai bottoni
-const buttonRight = document.getElementById('button-right');
-const buttonLeft = document.getElementById('button-left');
 
 
-// associamo una variabile 'let' alla classe hidden
-let activeSwitch = 'class="hidden"'
+
+
+
+// dichiariamo una variabile 'let' indirizzata alla classe delle img
+
+let activeSwitch
 
 /* Inseriamo le singole img in delle variabili con un template Literl con il quale 
 integriamo la variabile della classe */
@@ -31,31 +32,57 @@ const img5 =  document.querySelector('.canvas').innerHTML = `
 
 
 // array delle img da inserire, posta in variabili
-const imgList = [ `
-     ${img1} 
-     ${img2} 
-     ${img3}  
-     ${img4} 
-     ${img5}
-     ` ]
+const imgList = [ 
+     ` ${img1} ` ,
+     ` ${img2} ` ,
+     ` ${img3} ` ,
+     ` ${img4} ` ,
+     ` ${img5} ` 
+      ]
+
+     
+document.querySelector('.canvas').innerHTML = (imgList[0])
 
 
-// document.querySelector('.canvas').innerHTML = imgList; 
-// debug per visualizzare tutte le img nel DOM
+let counter = 0
+let i
+
+// associamo una variabile ai bottoni
+const buttonRight = document.getElementById('button-right');
+const buttonLeft = document.getElementById('button-left');
+
+    
 
 
+buttonRight.addEventListener('click', function(){
+
+    counter += 1 ;
+    console.log(counter)
+
+    for ( i = 0; i < imgList.length; i++){
+        
+        if (counter == i){
+
+            document.querySelector('.canvas').innerHTML = (imgList[i])
+
+        }
+
+    }
+
+})
 
 
-// aggiungiamo l'evento di ascolto al button per andare avanti
-buttonRight.addEventListener('click', function(ev){
+buttonLeft.addEventListener('click', function(){
+    
+    counter -= 1 
+    console.log(counter)
 
+    for (i = imgList.length - 1 ; i >= 0; i--){
+        
+        if (counter == i){
 
-    // sviluppiamo un ciclo for che riconosce gli indici dell'array
+            document.querySelector('.canvas').innerHTML = (imgList[i])
 
-    for(i = 0; i < imgList.length; i++ ){
-
-        if(?){
-            activeSwitch = 'class="active"'
         }
 
     }
@@ -68,7 +95,3 @@ buttonRight.addEventListener('click', function(ev){
 
 
 
-
-buttonLeft.addEventListener('click' , function(){
-
-})
