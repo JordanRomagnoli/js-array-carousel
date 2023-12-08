@@ -30,10 +30,6 @@ const imgList = [
      ` ${img2} ` ,
      ` ${img3} ` ,
      ` ${img4} ` ,
-     ` ${img1} ` ,
-     ` ${img2} ` ,
-     ` ${img3} ` ,
-     ` ${img4} ` ,
      ` ${img5} ` 
       ]
 
@@ -48,12 +44,11 @@ let counter = 0
 const buttonRight = document.getElementById('button-right');
 const buttonLeft = document.getElementById('button-left');
 
-    
 
 
 buttonRight.addEventListener('click', function(){
 
-       
+      
     if (counter < imgList.length -1){
 
         counter += 1;
@@ -62,6 +57,14 @@ buttonRight.addEventListener('click', function(){
 
         document.querySelector('.canvas').innerHTML = imgList[counter];
     }
+    
+    else if (counter == imgList.length -1){
+
+        counter = 0
+
+         document.querySelector('.canvas').innerHTML = imgList[counter];
+
+     }
     
 
 })
@@ -77,11 +80,16 @@ buttonLeft.addEventListener('click', function(){
 
             document.querySelector('.canvas').innerHTML = (imgList[counter])
 
-        }
+        }else {
+
+            counter += imgList.length - 1 
+    
+             document.querySelector('.canvas').innerHTML = imgList[counter];
+    
+         }
 
     
 })
-
 
 
 
