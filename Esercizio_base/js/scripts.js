@@ -31,13 +31,13 @@ const imgList = [
      ` ${img3} ` ,
      ` ${img4} ` ,
      ` ${img5} ` 
-      ]
+      ];
 
      
-document.querySelector('.canvas').innerHTML = (imgList[0])
+document.querySelector('.canvas').innerHTML = (imgList[0]);
 
 
-let counter = 0
+let counter = 0 ;
 
 
 // associamo una variabile ai bottoni
@@ -58,14 +58,6 @@ buttonRight.addEventListener('click', function(){
         document.querySelector('.canvas').innerHTML = imgList[counter];
     }
     
-    else if (counter == imgList.length -1){
-
-        counter = 0
-
-         document.querySelector('.canvas').innerHTML = imgList[counter];
-
-     }
-    
 
 })
 
@@ -80,16 +72,10 @@ buttonLeft.addEventListener('click', function(){
 
             document.querySelector('.canvas').innerHTML = (imgList[counter])
 
-        }else {
-
-            counter += imgList.length - 1 
-    
-             document.querySelector('.canvas').innerHTML = imgList[counter];
-    
-         }
+        }
 
     
-})
+}) 
 
 
 
