@@ -61,7 +61,7 @@ let counterT
 let swipe = true
 
 
-setInterval(() => {
+let clock = setInterval(() => {
 
     if (counter < imgList.length -1){
 
@@ -82,6 +82,12 @@ setInterval(() => {
     
 }, 3000);
 
+document.getElementById('button-reset').addEventListener('click', function(){
+    clearInterval(clock);
+}
+);
+
+
 
 
 
@@ -93,7 +99,7 @@ const buttonLeft = document.getElementById('button-left');
 
 buttonRight.addEventListener('click', function(){
 
-    swipe = false;
+
     if (counter < imgList.length -1){
 
         counter += 1;
@@ -117,7 +123,7 @@ buttonRight.addEventListener('click', function(){
 
 buttonLeft.addEventListener('click', function(){
     
-    swipe = false;
+
         if ((counter !== imgList.length) && (counter !== 0)){
 
             counter -= 1 ;
@@ -139,7 +145,6 @@ buttonLeft.addEventListener('click', function(){
 
 for(let i = 0; i < imgListT.length; i++){
 
-    swipe = false;
     let buttonThumbnail = document.createElement('a');
     
     buttonThumbnail.append(imgListT[i]);
@@ -150,6 +155,7 @@ for(let i = 0; i < imgListT.length; i++){
 
 
     imgListT[i].addEventListener('click', function(){
+
 
         document.querySelector('.canvas').innerHTML = (imgList[i]);
 
