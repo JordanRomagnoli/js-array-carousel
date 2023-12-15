@@ -3,23 +3,23 @@
 /* Inseriamo le singole img in delle variabili con un template Literl con il quale 
 integriamo la variabile della classe */
 
-const img1 =  document.querySelector('.canvas').innerHTML = `
+const img1 =`
 <img src="img/01.webp" alt="Spiderman">
 `;
 
-const img2 =  document.querySelector('.canvas').innerHTML = `
+const img2 =`
 <img src="img/02.webp" alt="Ratchet&Clanck">
 `;
 
-const img3 =  document.querySelector('.canvas').innerHTML = `
+const img3 =`
 <img src="img/03.webp" alt="Fortnite">
 `;
 
-const img4 =  document.querySelector('.canvas').innerHTML = `
+const img4 =`
 <img src="img/04.webp" alt="Stray">
 `;
 
-const img5 =  document.querySelector('.canvas').innerHTML = `
+const img5 =`
 <img src="img/05.webp" alt="Avengers">
 `;
 
@@ -58,6 +58,31 @@ document.querySelector('.canvas').innerHTML = (imgList[0]);
 
 let counter = 0 ;
 let counterT
+let swipe = true
+
+
+setInterval(() => {
+
+    if (counter < imgList.length -1){
+
+        counter += 1;
+
+        console.log(counter);
+
+        document.querySelector('.canvas').innerHTML = imgList[counter];
+    }
+    
+    else if (counter == imgList.length -1){
+
+        counter = 0 ;
+
+            document.querySelector('.canvas').innerHTML = imgList[counter];
+
+        };
+    
+}, 3000);
+
+
 
 
 // associamo una variabile ai bottoni
@@ -68,7 +93,7 @@ const buttonLeft = document.getElementById('button-left');
 
 buttonRight.addEventListener('click', function(){
 
-      
+    swipe = false;
     if (counter < imgList.length -1){
 
         counter += 1;
@@ -92,7 +117,7 @@ buttonRight.addEventListener('click', function(){
 
 buttonLeft.addEventListener('click', function(){
     
-    
+    swipe = false;
         if ((counter !== imgList.length) && (counter !== 0)){
 
             counter -= 1 ;
@@ -114,6 +139,7 @@ buttonLeft.addEventListener('click', function(){
 
 for(let i = 0; i < imgListT.length; i++){
 
+    swipe = false;
     let buttonThumbnail = document.createElement('a');
     
     buttonThumbnail.append(imgListT[i]);
@@ -121,7 +147,7 @@ for(let i = 0; i < imgListT.length; i++){
 
     
     document.querySelector('.thumbnail').append(buttonThumbnail);
-    console.log(buttonThumbnail);
+
 
     imgListT[i].addEventListener('click', function(){
 
@@ -132,9 +158,6 @@ for(let i = 0; i < imgListT.length; i++){
     );
     
 }
-
-
-
 
 
 

@@ -3,23 +3,23 @@
 /* Inseriamo le singole img in delle variabili con un template Literl con il quale 
 integriamo la variabile della classe */
 
-const img1 =  document.querySelector('.canvas').innerHTML = `
+const img1 =`
 <img src="img/01.webp" alt="Spiderman">
 `;
 
-const img2 =  document.querySelector('.canvas').innerHTML = `
+const img2 =`
 <img src="img/02.webp" alt="Ratchet&Clanck">
 `;
 
-const img3 =  document.querySelector('.canvas').innerHTML = `
+const img3 =`
 <img src="img/03.webp" alt="Fortnite">
 `;
 
-const img4 =  document.querySelector('.canvas').innerHTML = `
+const img4 =`
 <img src="img/04.webp" alt="Stray">
 `;
 
-const img5 =  document.querySelector('.canvas').innerHTML = `
+const img5 =`
 <img src="img/05.webp" alt="Avengers">
 `;
 
